@@ -7,6 +7,7 @@ Esta pasta concentra as decisoes de produto, arquitetura e seguranca do SkillPay
 - [Architecture Overview](architecture/overview.md): visao tecnica do gateway MCP, API, policy engine, roteamento e providers.
 - [ADR 0001 - Python-first Stack](architecture/adr-0001-python-first-stack.md): decisao inicial de stack e trade-offs.
 - [MVP Scope](product/mvp-scope.md): escopo do MVP, criterios de entrada e itens fora do primeiro ciclo.
+- [Business Model](product/business-model.md): posicionamento, modelo de receita, estrategia de gateway e margem.
 - [Frontend Wireframes](product/frontend-wireframes.md): jornadas, telas e wireframes textuais do control plane.
 - [MCP Tools](api/mcp-tools.md): contratos iniciais das tools expostas pelo servidor MCP.
 - [Policy Engine](security/policy-engine.md): regras deterministicas, limites, auditoria e postura de seguranca.
@@ -16,7 +17,8 @@ Esta pasta concentra as decisoes de produto, arquitetura e seguranca do SkillPay
 1. O SkillPay deve ser um orquestrador financeiro MCP-first, nao um liquidante.
 2. Toda transacao iniciada por agente deve passar por validacao deterministica antes de chegar a um provider.
 3. O frontend e um control plane para configurar, simular e auditar o gateway.
-4. A documentacao deve ser atualizada junto com qualquer mudanca funcional, API, fluxo negocial ou decisao arquitetural.
+4. O modelo comercial inicial deve priorizar margem de software; margem transacional deve ser expansao conforme volume e maturidade operacional.
+5. A documentacao deve ser atualizada junto com qualquer mudanca funcional, API, fluxo negocial ou decisao arquitetural.
 
 ## Status Atual
 

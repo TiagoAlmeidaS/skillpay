@@ -4,11 +4,31 @@
 
 Validar se desenvolvedores e times que criam agentes de IA conseguem integrar pagamentos de forma mais simples usando uma interface MCP-first, com seguranca, auditoria e roteamento basico para providers regulados.
 
+O MVP deve provar valor primeiro como software de controle financeiro para agentes. A captura de ganho transacional, como spread ou fee sobre pagamentos reais, deve ser tratada como expansao apos validacao de uso, volume e risco operacional.
+
 O MVP deve provar tres hipoteses:
 
 1. Um agente consegue executar pagamentos por tools MCP com pouco atrito.
 2. Um operador humano consegue configurar limites e auditar o comportamento financeiro do agente.
 3. O gateway consegue orquestrar providers sem assumir papel de liquidante.
+
+## Foco Comercial
+
+O SkillPay deve ser vendido inicialmente como camada de confianca para agentes que executam operacoes financeiras:
+
+- integra pagamentos em agentes por MCP;
+- aplica limites e permissoes por agente;
+- bloqueia payloads invalidos ou fora de politica antes do provider;
+- registra audit log por tool call;
+- permite sandbox financeiro antes de producao.
+
+A mensagem principal do MVP deve ser:
+
+> Permita que seus agentes cobrem, consultem e estornem pagamentos com limites, auditoria e seguranca, sem integrar cada provider manualmente.
+
+O modelo de receita inicial deve favorecer assinatura, uso de API/MCP, logs, sandbox e setup. Fee por transacao real pode existir, mas nao deve ser a unica fonte de receita no primeiro ciclo.
+
+Detalhes de precificacao, margem e evolucao para gateway estao em [Business Model](business-model.md).
 
 ## Publico Inicial
 

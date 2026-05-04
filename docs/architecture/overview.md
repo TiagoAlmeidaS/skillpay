@@ -4,6 +4,8 @@
 
 O SkillPay e um gateway MCP-first que permite que agentes de IA iniciem, consultem e revertam pagamentos por meio de tools MCP controladas por politicas deterministicas. O produto deve atuar como camada de orquestracao e auditoria sobre providers regulados, nao como liquidante.
 
+Do ponto de vista de negocio, o SkillPay pode evoluir para capturar receita de gateway por meio de fees e margem transacional. Essa evolucao nao deve mudar a fronteira tecnica inicial: agentes continuam chamando o SkillPay, o policy engine decide se a acao pode seguir, e providers regulados continuam responsaveis pela captura, liquidacao e obrigações financeiras do pagamento.
+
 ## Visao Geral
 
 ```mermaid
@@ -82,6 +84,8 @@ Responsabilidades:
 - traduzir erros;
 - expor status padronizado para o gateway.
 
+Adapters tambem sao a fronteira onde, no futuro, o SkillPay pode capturar margem transacional por meio de contratos comerciais com providers. Essa decisao deve permanecer fora da regra de negocio do agente: o agente solicita uma acao financeira, o gateway aplica politica e o router escolhe o provider conforme configuracao explicita.
+
 ### Transaction Store
 
 Banco transacional para entidades como:
@@ -153,6 +157,8 @@ Usado para onboarding e testes. Deve simular sucesso, falha, expiracao e refund 
 ### Producao
 
 Usado somente com provider configurado, agente autorizado e limites ativos. Deve exigir credenciais validas e mascarar dados sensiveis nos logs.
+
+Em producao, o MVP deve operar com providers regulados configurados pelo workspace ou pela plataforma. Mesmo que haja fee transacional do SkillPay, o sistema nao deve custodiar saldo nem assumir liquidacao propria no primeiro ciclo.
 
 ## Decisoes Fora do MVP
 
